@@ -1,11 +1,12 @@
 import "./App.css";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Navbar from "./components/Navbar";
-
+import { Link } from "react-router-dom";
 import ProductCard from "./components/ProductCard/ProductCard";
 import ItemCount from "./components/ItemListContainer/ItemCount/ItemCount";
 import ItemDetailContainer from "./components/CartWidget/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const onAdd = (cantidad) => {
@@ -24,6 +25,7 @@ function App() {
         />
         <Route path="*" element={<h1> Error 404: Not Found </h1>} />
         <Route path="/itemDetail" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
