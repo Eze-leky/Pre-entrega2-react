@@ -1,5 +1,6 @@
 import React from "react";
 import Item from "../Item/Item";
+import { products } from "../../productsMock";
 
 const itemList = ({ items }) => {
   return (
