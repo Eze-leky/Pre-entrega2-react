@@ -1,63 +1,74 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 // el import es un libreria para los estilos
-import styled from 'styled-components'
-import BurguerButton from './BurguerButton'
-import CartWidget from './CartWidget/CartWidget'
-
+import styled from "styled-components";
+import BurguerButton from "./BurguerButton";
+import CartWidget from "./CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 function Navbar() {
-
-  const [clicked, setClicked] = useState(false)
+  const [clicked, setClicked] = useState(false);
   const handleClick = () => {
     //cuando esta true lo pasa a false y vice versa
-    setClicked(!clicked)
-  }
+    setClicked(!clicked);
+  };
   return (
     <>
       <NavContainer>
-        <img src="/logo1.jpg" alt='' 
-        style={{ 
-          width: "6%", height: "8vh", borderRadius: "80%"
-        }}
-        
-        />
-        <div className={`links ${clicked ? 'active' : ''}`}>
-          <a onClick={handleClick} href="#h">Home</a>
-          <a onClick={handleClick} href="#h">Cursos</a>
-          <a onClick={handleClick} href="#h">Nosotros</a>
-          <a onClick={handleClick} href="#h">Contacto</a>
+        <Link to="/">
+          <img
+            src="/logo1.jpg"
+            alt=""
+            style={{
+              width: "6%",
+              height: "8vh",
+              borderRadius: "80%",
+            }}
+          />
+        </Link>
+        <div className={`links ${clicked ? "active" : ""}`}>
+          <a onClick={handleClick} href="#h">
+            Home
+          </a>
+          <a onClick={handleClick} href="#h">
+            Cursos
+          </a>
+          <a onClick={handleClick} href="#h">
+            Nosotros
+          </a>
+          <a onClick={handleClick} href="#h">
+            Contacto
+          </a>
         </div>
-        <div className='burguer'>
+        <div className="burguer">
           <BurguerButton clicked={clicked} handleClick={handleClick} />
         </div>
-        <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
+        <BgDiv className={`initial ${clicked ? " active" : ""}`}></BgDiv>
         <CartWidget />
       </NavContainer>
-      
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
 
 const NavContainer = styled.nav`
-  h2{
+  h2 {
     color: white;
     font-weight: 400;
-    span{
+    span {
       font-weight: bold;
     }
   }
-  padding: .4rem;
+  padding: 0.4rem;
   background-color: #333;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  a{
+  a {
     color: white;
     text-decoration: none;
     margin-right: 1rem;
   }
-  .links{
+  .links {
     position: absolute;
     top: -700px;
     left: -2000px;
@@ -65,16 +76,16 @@ const NavContainer = styled.nav`
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    transition: all .5s ease;
-    a{
+    transition: all 0.5s ease;
+    a {
       color: white;
       font-size: 2rem;
       display: block;
     }
-    @media(min-width: 768px){
+    @media (min-width: 768px) {
       position: initial;
       margin: 0;
-      a{
+      a {
         font-size: 1rem;
         color: white;
         display: inline;
@@ -83,7 +94,7 @@ const NavContainer = styled.nav`
     }
   }
 
-  .links.active{
+  .links.active {
     width: 100%;
     display: block;
     position: absolute;
@@ -93,19 +104,19 @@ const NavContainer = styled.nav`
     left: 0;
     right: 0;
     text-align: center;
-    a{
+    a {
       font-size: 2rem;
       margin-top: 1rem;
       color: white;
     }
   }
 
-  .burguer{
-    @media(min-width: 768px){
+  .burguer {
+    @media (min-width: 768px) {
       display: none;
     }
   }
-`
+`;
 
 const BgDiv = styled.div`
   background-color: #222;
@@ -115,13 +126,13 @@ const BgDiv = styled.div`
   width: 100%;
   height: 100%;
   z-index: -1;
-  transition: all .6s ease ;
-  
-  &.active{
+  transition: all 0.6s ease;
+
+  &.active {
     border-radius: 0 0 80% 0;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
-`
+`;
