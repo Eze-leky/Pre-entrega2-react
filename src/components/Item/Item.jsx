@@ -25,7 +25,7 @@ const Item = ({ element }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Link to="/itemDetail">
+        <Link to="/itemDetail/$(element.id)">
           <Button size="small" variant="contained" color="secondary">
             Saber mas
           </Button>

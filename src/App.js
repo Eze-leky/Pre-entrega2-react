@@ -24,7 +24,7 @@ function App() {
           element={<ItemCount stock={5} initial={1} onAdd={onAdd} />}
         />
         <Route path="*" element={<h1> Error 404: Not Found </h1>} />
-        <Route path="/itemDetail" element={<ItemDetailContainer />} />
+        <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
