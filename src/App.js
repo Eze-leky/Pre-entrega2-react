@@ -1,6 +1,6 @@
 import "./App.css";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import { Link } from "react-router-dom";
 import ProductCard from "./components/ProductCard/ProductCard";
 import ItemCount from "./components/ItemListContainer/ItemCount/ItemCount";
