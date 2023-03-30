@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const productSelected = products.find((element) => element.id === Number(id));
 
   const onAdd = (cantidad) => {
-    console.log("se agrego al carrito ${cantidad} productos");
+    console.log(`se agrego al carrito ${cantidad} productos`);
   };
 
   return (

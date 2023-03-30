@@ -25,18 +25,18 @@ function Navbar() {
           />
         </Link>
         <div className={`links ${clicked ? "active" : ""}`}>
-          <a onClick={handleClick} href="#h">
+          <Link to="/" onClick={handleClick} href="#h">
             Home
-          </a>
-          <a onClick={handleClick} href="#h">
-            Cursos
-          </a>
-          <a onClick={handleClick} href="#h">
-            Nosotros
-          </a>
-          <a onClick={handleClick} href="#h">
-            Contacto
-          </a>
+          </Link>
+          <Link to="/category/clasicos" onClick={handleClick} href="#h">
+            Clasicos
+          </Link>
+          <Link to="/category/tiki" onClick={handleClick} href="#h">
+            Tiki
+          </Link>
+          <Link to="/category/modernos" onClick={handleClick} href="#h">
+            Modernos
+          </Link>
         </div>
         <div className="burguer">
           <BurguerButton clicked={clicked} handleClick={handleClick} />
